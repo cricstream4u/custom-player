@@ -202,14 +202,6 @@ section {
   align-items: center;
 }
 
-.controls .controls-left .live {
-  display: inline-block;
-  font-size: 14px;
-  white-space: nowrap;
-  color: #fff;
-  margin-left: 5px;
-  text-align: center;
-}
 
 .controls .icon {
   display: inline-flex;

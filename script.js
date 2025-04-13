@@ -130,7 +130,7 @@ video_players.forEach(video_player => {
   video_player.innerHTML = video_player_html;
 
   const mainVideo = video_player.querySelector(".main-video"),
-    progressAreaTime = video_player.querySelector(".progressAreaTime"),
+    
     controls = video_player.querySelector(".controls"),
     progressArea = video_player.querySelector(".progress-area"),
     bufferedBar = video_player.querySelector(".bufferedBar"),
@@ -235,61 +235,6 @@ video_players.forEach(video_player => {
   });
 
   // let's update playing video current time on according to the progress bar width
-
-  progressArea.addEventListener("pointerdown", (e) => {
-    progressArea.setPointerCapture(e.pointerId);
-    setTimelinePosition(e);
-    progressArea.addEventListener("pointermove", setTimelinePosition);
-    progressArea.addEventListener("pointerup", () => {
-      progressArea.removeEventListener("pointermove", setTimelinePosition);
-    })
-  });
-
-
-  function setTimelinePosition(e) {
-    let videoDuration = mainVideo.duration;
-    let progressWidthval = progressArea.clientWidth + 2;
-    let ClickOffsetX = e.offsetX;
-    mainVideo.currentTime = (ClickOffsetX / progressWidthval) * videoDuration;
-
-    let progressWidth = (mainVideo.currentTime / videoDuration) * 100 + 0.5;
-    progress_Bar.style.width = `${progressWidth}%`;
-
-    let currentVideoTime = mainVideo.currentTime;
-    let currentMin = Math.floor(currentVideoTime / 60);
-    let currentSec = Math.floor(currentVideoTime % 60);
-    // if seconds are less then 10 then add 0 at the begning
-    currentSec < 10 ? (currentSec = "0" + currentSec) : currentSec;
-    current.innerHTML = `${currentMin} : ${currentSec}`;
-
-  }
-
-  function drawProgress(canvas, buffered, duration) {
-    let context = canvas.getContext('2d', { antialias: false });
-    context.fillStyle = "#ffffffe6";
-
-    let height = canvas.height;
-    let width = canvas.width;
-    if (!height || !width) throw "Canva's width or height or not set.";
-    context.clearRect(0, 0, width, height);
-    for (let i = 0; i < buffered.length; i++) {
-      let leadingEdge = buffered.start(i) / duration * width;
-      let trailingEdge = buffered.end(i) / duration * width;
-      context.fillRect(leadingEdge, 0, trailingEdge - leadingEdge, height)
-    }
-  }
-
-  mainVideo.addEventListener('progress', () => {
-    drawProgress(bufferedBar, mainVideo.buffered, mainVideo.duration);
-  })
-
-  mainVideo.addEventListener('waiting', () => {
-    loader.style.display = "block";
-  })
-
-  mainVideo.addEventListener('canplay', () => {
-    loader.style.display = "none";
-  })
 
 
   // change volume

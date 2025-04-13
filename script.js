@@ -269,27 +269,7 @@ video_players.forEach(video_player => {
     muteVolume();
   });
 
-  // Update progress area time and display block on mouse move
-  progressArea.addEventListener("mousemove", (e) => {
-    let progressWidthval = progressArea.clientWidth + 2;
-    let x = e.offsetX;
-    let videoDuration = mainVideo.duration;
-    let progressTime = Math.floor((x / progressWidthval) * videoDuration);
-    let currentMin = Math.floor(progressTime / 60);
-    let currentSec = Math.floor(progressTime % 60);
-    progressAreaTime.style.setProperty("--x", `${x}px`);
-    progressAreaTime.style.display = "block";
-    if (x >= progressWidthval - 80) {
-      x = progressWidthval - 80;
-    } else if (x <= 75) {
-      x = 75;
-    } else {
-      x = e.offsetX;
-    }
 
-    // if seconds are less then 10 then add 0 at the begning
-    currentSec < 10 ? (currentSec = "0" + currentSec) : currentSec;
-    progressAreaTime.innerHTML = `${currentMin} : ${currentSec}`;
     // If you want to show your video thumbnail on progress Bar hover then comment out the following code. Make sure that you are using video from same domain where you hosted your webpage.
 
     // thumbnail.style.setProperty("--x", `${x}px`);

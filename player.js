@@ -31,7 +31,7 @@ const video_player_html = `
           <input type="range" min="0" max="100" class="volume_range" />
         </span>
 
-        <div class="timer">
+        <div class="live">
           <span class="current">Live</span> 
         </div>
       </div>

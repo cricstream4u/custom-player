@@ -5,7 +5,7 @@ video_players.forEach(video_player => {
   ${video_player.innerHTML}
   <p class="caption_text"></p>
   <!-- <div class="thumbnail"></div> -->
-  <div class="progressAreaTime" >0:00</div>
+  
   
   <div class="controls active">
     <div class="progress-area">
@@ -35,7 +35,7 @@ video_players.forEach(video_player => {
           <input type="range" min="0" max="100" class="volume_range" />
         </span>
 
-        <div class="timer">
+        <div class="live">
           <span class="current">Live</span> 
         </div>
       </div>

@@ -36,8 +36,7 @@ video_players.forEach(video_player => {
         </span>
 
         <div class="timer">
-          <span class="current">0:00</span> /
-          <span class="duration">0:00</span>
+          <span class="current">Live</span> 
         </div>
       </div>
 

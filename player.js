@@ -32,8 +32,7 @@ const video_player_html = `
         </span>
 
         <div class="timer">
-          <span class="current">0:00</span> /
-          <span class="duration">0:00</span>
+          <span class="current">0:00</span> 
         </div>
       </div>
 

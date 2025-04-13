@@ -202,7 +202,7 @@ section {
   align-items: center;
 }
 
-.controls .controls-left .timer {
+.controls .controls-left .live {
   display: inline-block;
   font-size: 14px;
   white-space: nowrap;

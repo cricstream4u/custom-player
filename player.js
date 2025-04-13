@@ -32,7 +32,7 @@ const video_player_html = `
         </span>
 
         <div class="timer">
-          <span class="current">0:00</span> 
+          <span class="current">Live</span> 
         </div>
       </div>
 

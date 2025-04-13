@@ -1,7 +1,7 @@
 const video_player_html = `
   <div class="loader"></div>
   <p class="caption_text"></p>
-  <div class="progressAreaTime" >0:00</div>
+  
   
   <div class="controls active">
     <div class="progress-area">
